@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phyllia - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Phyllia - Website coming soon. Stay tuned for updates!">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-placeholder">LOGO</div>
+        <h1>Phyllia</h1>
+        <p>Our website is currently under construction. We're working hard to bring you an amazing experience. Please check back soon!</p>
+        
+        <div class="color-palette">
+            <div class="color" title="Light beige - #DAD7CD">DAD7CD</div>
+            <div class="color" title="Sage green - #A3B18A">A3B18A</div>
+            <div class="color" title="Medium green - #588157">588157</div>
+            <div class="color" title="Dark green - #3A5A40">3A5A40</div>
+            <div class="color" title="Deep forest green - #344E41">344E41</div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 TrueFalse. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for the logo placeholder
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoPlaceholder = document.querySelector('.logo-placeholder');
+            
+            // Add a subtle animation when the page loads
+            setTimeout(() => {
+                logoPlaceholder.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    logoPlaceholder.style.transform = 'scale(1)';
+                }, 300);
+            }, 500);
+        });
+    </script>
+</body>
+</html> 

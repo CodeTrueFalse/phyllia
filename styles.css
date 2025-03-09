@@ -1,0 +1,164 @@
+/* Phyllia - Under Construction Page Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #DAD7CD;
+    color: #344E41;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo-placeholder {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    background-color: #3A5A40;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #DAD7CD;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.logo-placeholder:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #3A5A40;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.color-palette {
+    display: flex;
+    margin: 2rem auto;
+    max-width: 600px;
+    height: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.color {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 5px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.color:hover {
+    transform: translateY(-5px);
+}
+
+.color:nth-child(1) {
+    background-color: #DAD7CD;
+    color: #344E41;
+}
+
+.color:nth-child(2) {
+    background-color: #A3B18A;
+}
+
+.color:nth-child(3) {
+    background-color: #588157;
+}
+
+.color:nth-child(4) {
+    background-color: #3A5A40;
+}
+
+.color:nth-child(5) {
+    background-color: #344E41;
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #588157;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #588157;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #344E41;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .logo-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .color-palette {
+        height: 40px;
+    }
+    
+    .color {
+        font-size: 0.6rem;
+    }
+    
+    .social-links {
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        font-size: 1.2rem;
+    }
+} 
