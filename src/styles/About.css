@@ -1,0 +1,212 @@
+.about-page {
+  padding-top: 0; /* Already accounted for in main element */
+}
+
+/* About Hero Section */
+.about-hero {
+  background-color: var(--color-dark-green);
+  color: var(--text-light);
+  padding: 8rem 0 6rem;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.about-hero .lead {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-sage);
+  line-height: 1.5;
+}
+
+/* Content Sections */
+.mission, .technical {
+  padding: var(--spacing-xl) 0;
+}
+
+.mission {
+  background-color: var(--color-beige);
+}
+
+.technical {
+  background-color: white;
+}
+
+.mission-content, .technical-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.mission-text, .technical-text {
+  flex: 1;
+}
+
+.mission-text p, .technical-text p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.technical-text h3 {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-dark-green);
+  font-size: 1.3rem;
+}
+
+.technical-text h3:first-child {
+  margin-top: 0;
+}
+
+.mission-image, .technical-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.placeholder-image-square {
+  width: 450px;
+  height: 350px;
+  background-color: var(--color-sage);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.technical .placeholder-image-square {
+  background-color: var(--color-medium-green);
+}
+
+.placeholder-image-square::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* Values Section */
+.values {
+  background-color: var(--color-beige);
+  padding: var(--spacing-xl) 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.value-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-card h3 {
+  color: var(--color-dark-green);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.value-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 3px;
+  background-color: var(--color-medium-green);
+}
+
+.value-card p {
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .mission-content, .technical-content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .mission-text, .technical-text, 
+  .mission-image, .technical-image {
+    width: 100%;
+  }
+  
+  .technical-content {
+    flex-direction: column-reverse;
+  }
+  
+  .placeholder-image-square {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 6rem 0 4rem;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .about-hero .lead {
+    font-size: 1.3rem;
+  }
+  
+  .mission, .technical, .values {
+    padding: 4rem 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .about-hero .lead {
+    font-size: 1.1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .value-card {
+    padding: 2rem;
+  }
+} 
