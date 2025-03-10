@@ -67,7 +67,7 @@ const Footer = () => {
       
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {currentYear} {config.companyName}. Tous droits réservés.</p>
+          <p>&copy; {currentYear} <a href="https://truefalse.fr" target="_blank" rel="noopener noreferrer">{config.companyName}</a>. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
