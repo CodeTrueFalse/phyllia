@@ -29,7 +29,7 @@ const teamMembers = [
     name: 'Maxence Leclercq',
     role: 'Co-Fondateur & Directeur Général',
     bio: 'Gestion des opérations et croissance de l\'entreprise.',
-    imageUrl: '/images/team/maxence_leclercq.png', // Add image to this path
+    imageUrl: '/images/team/maxence_leclercq.jpg', // Add image to this path
     socials: {
       linkedin: 'https://www.linkedin.com/in/maxence-leclercq-94195b222/',
       github: 'https://github.com/Cargaison'
