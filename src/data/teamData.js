@@ -13,75 +13,72 @@
 const teamMembers = [
   {
     id: 1,
-    name: 'Prénom Nom',
-    role: 'CEO & Co-fondateur',
-    bio: 'Passionné par l\'IA éthique et l\'innovation responsable. Expert en développement durable et technologies vertes.',
-    imageUrl: null, // Add image path when available: '/images/team/member1.jpg'
+    name: 'Hugo Sibony',
+    role: 'Co-Fondateur, Président & CTO',
+    bio: 'Direction stratégique et technique de Phyllia.',
+    imageUrl: '/images/team/hugo_sibony.jpg', // Add image to this path
     socials: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username',
-      github: 'https://github.com/username',
-    }
+      linkedin: 'https://linkedin.com/in/hsibony',
+      github: 'https://github.com/kazetachinuu',
+      website: 'https://hugosibony.com'
+    },
+    email: 'hugo.sibony@truefalse.fr'
   },
   {
     id: 2,
-    name: 'Prénom Nom',
-    role: 'CTO & Co-fondateur',
-    bio: 'Spécialiste en intelligence artificielle et systèmes distribués. Défenseur de la souveraineté numérique.',
-    imageUrl: null, // Add image path when available: '/images/team/member2.jpg'
+    name: 'Maxence Leclercq',
+    role: 'Co-Fondateur & Directeur Général',
+    bio: 'Gestion des opérations et croissance de l\'entreprise.',
+    imageUrl: '/images/team/maxence_leclercq.png', // Add image to this path
     socials: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username',
-      github: 'https://github.com/username',
-    }
+      linkedin: 'https://www.linkedin.com/in/maxence-leclercq-94195b222/',
+      github: 'https://github.com/Cargaison'
+    },
+    email: 'maxence.leclercq@truefalse.fr'
   },
   {
     id: 3,
-    name: 'Prénom Nom',
-    role: 'Responsable R&D',
-    bio: 'Docteur en informatique spécialisé dans l\'optimisation des algorithmes pour réduire la consommation énergétique.',
-    imageUrl: null, // Add image path when available: '/images/team/member3.jpg'
+    name: 'Ilyes Benahmed',
+    role: 'Directeur Commercial',
+    bio: 'Stratégie commerciale et développement partenariats.',
+    imageUrl: '/images/team/ilyes_benahmed.png', // Add image to this path
     socials: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username',
-      github: 'https://github.com/username',
-    }
+      linkedin: 'https://www.linkedin.com/in/ilyes-benahmed/'
+    },
+    email: 'ilyes.benahmed@truefalse.fr'
   },
   {
     id: 4,
-    name: 'Prénom Nom',
-    role: 'Lead Developer',
-    bio: 'Développeur passionné par la création de solutions technologiques durables et efficaces.',
-    imageUrl: null, // Add image path when available: '/images/team/member4.jpg'
+    name: 'Tanguy Libert',
+    role: 'Directeur des Opérations',
+    bio: 'Coordination des processus opérationnels.',
+    imageUrl: '/images/team/tanguy_libert.jpg', // Add image to this path
     socials: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username',
-      github: 'https://github.com/username',
-    }
+      linkedin: 'https://www.linkedin.com/in/tanguy-libert-157653221/'
+    },
+    email: 'tanguy.libert@truefalse.fr'
   },
   {
     id: 5,
-    name: 'Prénom Nom',
-    role: 'Responsable Marketing',
-    bio: 'Expert en communication autour des technologies vertes et de l\'innovation responsable.',
-    imageUrl: null, // Add image path when available: '/images/team/member5.jpg'
+    name: 'Rémy Le Bohec',
+    role: 'Responsable Cybersécurité',
+    bio: '',
+    imageUrl: null, // Add image path when available: '/images/team/remy_lebohec.jpg'
     socials: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username',
-      github: 'https://github.com/username',
-    }
+      linkedin: 'https://www.linkedin.com/in/rémy-le-bohec/'
+    },
+    email: 'remy.lebohec@epita.fr'
   },
   {
     id: 6,
-    name: 'Prénom Nom',
-    role: 'Data Scientist',
-    bio: 'Spécialiste en analyse de données et en modèles d\'IA optimisés pour les infrastructures éco-responsables.',
-    imageUrl: null, // Add image path when available: '/images/team/member6.jpg'
+    name: 'Godwin Kalinsou',
+    role: 'Développeur',
+    bio: '',
+    imageUrl: null, // Add image path when available: '/images/team/godwin_kalinsou.jpg'
     socials: {
-      linkedin: 'https://linkedin.com/in/username',
-      twitter: 'https://twitter.com/username',
-      github: 'https://github.com/username',
-    }
+      linkedin: 'https://www.linkedin.com/in/godwin-kanlinsou/'
+    },
+    email: 'kanlinsougodwin@gmail.com'
   }
 ];
 
