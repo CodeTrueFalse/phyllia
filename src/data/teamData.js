@@ -15,7 +15,7 @@ const teamMembers = [
     id: 1,
     name: 'Hugo Sibony',
     role: 'Co-Fondateur, Président & CTO',
-    bio: 'Direction stratégique et technique de Phyllia.',
+    bio: 'Direction stratégique et technique de TrueFalse.',
     imageUrl: '/images/team/hugo_sibony.jpg', // Add image to this path
     socials: {
       linkedin: 'https://linkedin.com/in/hsibony',
