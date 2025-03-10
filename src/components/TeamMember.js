@@ -10,7 +10,7 @@ import '../styles/TeamMember.css';
  * @returns {JSX.Element}
  */
 const TeamMember = ({ member }) => {
-  const { name, role, bio, imageUrl, socials } = member;
+  const { name, role, bio, imageUrl, socials, email } = member;
   
   // Get initials for the placeholder
   const getInitials = (name) => {
@@ -35,7 +35,16 @@ const TeamMember = ({ member }) => {
       <div className="team-member-info">
         <h3>{name}</h3>
         <h4>{role}</h4>
-        <p>{bio}</p>
+        {bio && <p>{bio}</p>}
+        
+        {email && (
+          <div className="team-email">
+            <a href={`mailto:${email}`}>
+              <i className="fas fa-envelope"></i> {email}
+            </a>
+          </div>
+        )}
+        
         <div className="team-social">
           {socials?.linkedin && (
             <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -52,6 +61,11 @@ const TeamMember = ({ member }) => {
               <i className="fab fa-github"></i>
             </a>
           )}
+          {socials?.website && (
+            <a href={socials.website} target="_blank" rel="noopener noreferrer" aria-label="Website">
+              <i className="fas fa-link"></i>
+            </a>
+          )}
         </div>
       </div>
     </div>
@@ -62,12 +76,14 @@ TeamMember.propTypes = {
   member: PropTypes.shape({
     name: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
+    bio: PropTypes.string,
     imageUrl: PropTypes.string,
+    email: PropTypes.string,
     socials: PropTypes.shape({
       linkedin: PropTypes.string,
       twitter: PropTypes.string,
       github: PropTypes.string,
+      website: PropTypes.string,
     }),
   }).isRequired,
 };
