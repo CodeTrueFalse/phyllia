@@ -60,7 +60,7 @@ const teamMembers = [
   },
   {
     id: 6,
-    name: 'Godwin Kalinsou',
+    name: 'Godwin Kanlinsou',
     role: 'Développeur',
     bio: '',
     imageUrl: null, // Add image path when available: '/images/team/godwin_kalinsou.jpg'
