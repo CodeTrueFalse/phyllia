@@ -67,7 +67,7 @@ const teamMembers = [
     socials: {
       linkedin: 'https://www.linkedin.com/in/godwin-kanlinsou/'
     },
-    email: 'kanlinsougodwin@gmail.com'
+    email: 'godwin.kanlinsou@truefalse.fr'
   }
 ];
 
