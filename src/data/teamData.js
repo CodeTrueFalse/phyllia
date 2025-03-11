@@ -67,7 +67,7 @@ const teamMembers = [
     socials: {
       linkedin: 'https://www.linkedin.com/in/rémy-le-bohec/'
     },
-    email: 'remy.lebohec@epita.fr'
+    email: 'remy.le-bohec@epita.fr'
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ const teamMembers = [
     socials: {
       linkedin: 'https://www.linkedin.com/in/godwin-kanlinsou/'
     },
-    email: 'kanlinsougodwin@gmail.com'
+    email: 'godwin.kanlinsou@truefalse.fr'
   }
 ];
 
