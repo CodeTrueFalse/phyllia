@@ -63,7 +63,7 @@ const teamMembers = [
     name: 'Godwin Kanlinsou',
     role: 'Développeur',
     bio: '',
-    imageUrl: null, // Add image path when available: '/images/team/godwin_kalinsou.jpg'
+    imageUrl: '/images/team/godwin_kanlinsou.jpg',
     socials: {
       linkedin: 'https://www.linkedin.com/in/godwin-kanlinsou/'
     },
