@@ -1,0 +1,342 @@
+/* 
+  Phyllia - Main Styles 
+  A 100% French AI powered by renewable energy
+*/
+
+:root {
+  /* Color palette - refined with complementary shades */
+  --color-beige: #F0EFE9;
+  --color-beige-light: #F5F4F0;
+  --color-sage: #A3B18A;
+  --color-sage-light: #B5C1A3;
+  --color-medium-green: #588157;
+  --color-medium-green-dark: #4A714A;
+  --color-dark-green: #3A5A40;
+  --color-forest-green: #344E41;
+  
+  /* Text colors with improved contrast */
+  --text-light: #FFFFFF;
+  --text-light-muted: rgba(255, 255, 255, 0.8);
+  --text-dark: #222222;
+  --text-muted: #666666;
+  
+  /* Typography */
+  --font-main: var(--font-roboto), 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-headings: var(--font-montserrat), 'Montserrat', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+
+  /* Shadows and Effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Animation Speeds */
+  --transition-fast: 0.2s;
+  --transition-medium: 0.3s;
+  --transition-slow: 0.5s;
+
+  /* Default Next.js variables */
+  --background: var(--color-beige);
+  --foreground: var(--text-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-dark-green);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--color-medium-green);
+  text-decoration: none;
+  transition: all var(--transition-medium) ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--color-dark-green);
+}
+
+/* Styled links with underline animation */
+a.animated-link {
+  position: relative;
+}
+
+a.animated-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-medium-green);
+  transition: width var(--transition-medium) ease;
+}
+
+a.animated-link:hover:after {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Button Styles - Enhanced */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-medium) ease;
+  text-align: center;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary button - Solid background */
+.btn-primary {
+  background-color: var(--color-medium-green);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dark-green);
+}
+
+/* Secondary button - Outlined style */
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-medium-green);
+  color: var(--color-medium-green);
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-medium-green);
+  color: var(--text-light);
+  border-color: var(--color-medium-green);
+}
+
+/* Tertiary button - Text only with subtle hover */
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--color-medium-green);
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+}
+
+.btn-tertiary:hover {
+  background-color: rgba(88, 129, 87, 0.1);
+  box-shadow: none;
+  transform: none;
+}
+
+main {
+  flex: 1;
+  min-height: calc(100vh - 80px - 80px); /* viewport height - header - footer */
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+section {
+  padding: var(--spacing-xl) 0;
+  position: relative;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Gap and spacing utilities */
+.gap-sm { gap: var(--spacing-xs); }
+.gap-md { gap: var(--spacing-sm); }
+.gap-lg { gap: var(--spacing-md); }
+
+.mt-sm { margin-top: var(--spacing-xs); }
+.mt-md { margin-top: var(--spacing-sm); }
+.mt-lg { margin-top: var(--spacing-md); }
+
+.mb-sm { margin-bottom: var(--spacing-xs); }
+.mb-md { margin-bottom: var(--spacing-sm); }
+.mb-lg { margin-bottom: var(--spacing-md); }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  section {
+    padding: var(--spacing-md) 0;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+/* Improved iPad-specific responsiveness */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  
+  .btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+  }
+  
+  /* Improve tap targets for touch devices */
+  a, button, .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Better spacing for iPad */
+  .gap-md { gap: var(--spacing-xs); }
+  .gap-lg { gap: var(--spacing-sm); }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  section {
+    padding: var(--spacing-sm) 0;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.35rem; }
+  
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    width: 100%;  /* Make buttons full width on mobile */
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Increase base font size for better readability on small screens */
+  body {
+    font-size: 1.05rem;
+  }
+  
+  /* Improve spacing on small screens */
+  .mb-md { margin-bottom: var(--spacing-xs); }
+  .mt-md { margin-top: var(--spacing-xs); }
+  
+  /* Ensure touch targets are sized appropriately */
+  a, button, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+  }
+}
+
+/* Prevent content from being hidden under fixed elements */
+html {
+  scroll-padding-top: 80px; /* Matches the fixed header height */
+}
+
+/* Enable smooth scrolling for better experience */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

@@ -1,0 +1,122 @@
+/* Authentication page styling */
+
+:root {
+  /* Using existing variables from globals.css */
+  --auth-container-width: 100%;
+  --auth-container-max-width: 500px;
+  --auth-button-gap: 16px;
+  --auth-section-spacing: 32px;
+}
+
+/* Main container for auth components */
+.stack-auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px); /* Subtracting header and footer height */
+  width: var(--auth-container-width);
+  max-width: var(--auth-container-max-width);
+  padding: var(--spacing-lg, 3rem);
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Target Stack auth component container */
+:where([data-sf-stack]) {
+  width: 100%;
+  max-width: var(--auth-container-max-width);
+  margin: 0 auto;
+}
+
+/* Style the sign-in heading */
+:where([data-sf-stack]) h1 {
+  font-size: 2.25rem;
+  color: var(--color-dark-green);
+  margin-bottom: var(--auth-section-spacing);
+  text-align: center;
+}
+
+/* Style the account message */
+:where([data-sf-stack]) p {
+  margin-bottom: var(--auth-button-gap);
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Style specifically for sign-in buttons container */
+:where([data-sf-stack]) div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--auth-section-spacing);
+}
+
+/* Style for auth buttons */
+:where([data-sf-stack]) button {
+  width: 100%;
+  margin-bottom: var(--auth-button-gap);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-sm, 4px);
+  font-weight: 500;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0, 0, 0, 0.05));
+  transition: all 0.3s ease;
+}
+
+:where([data-sf-stack]) button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Style for links like "Sign up" */
+:where([data-sf-stack]) a {
+  color: var(--color-medium-green);
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  margin-top: var(--auth-button-gap);
+  transition: color 0.3s ease;
+  font-size: 1.05rem;
+}
+
+:where([data-sf-stack]) a:hover {
+  color: var(--color-dark-green);
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stack-auth-container {
+    min-height: calc(100vh - 140px);
+    padding: var(--spacing-md, 2rem);
+  }
+  
+  :where([data-sf-stack]) h1 {
+    font-size: 2rem;
+  }
+  
+  :where([data-sf-stack]) button {
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-auth-container {
+    min-height: calc(100vh - 120px);
+    padding: var(--spacing-sm, 1rem);
+  }
+  
+  :where([data-sf-stack]) h1 {
+    font-size: 1.85rem;
+  }
+  
+  :where([data-sf-stack]) button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+} 
