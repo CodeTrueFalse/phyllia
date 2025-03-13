@@ -1,9 +1,0 @@
-{
-  "/_not-found/page": "/_not-found",
-  "/favicon.ico/route": "/favicon.ico",
-  "/handler/[...stack]/page": "/handler/[...stack]",
-  "/page": "/",
-  "/chat/page": "/chat",
-  "/team/page": "/team",
-  "/about/page": "/about"
-}
