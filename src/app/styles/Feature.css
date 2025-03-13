@@ -1,0 +1,129 @@
+.feature-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all 0.4s ease;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-medium-green) 100%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(88, 129, 87, 0.3);
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-forest-green);
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* iPad Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .feature-card {
+    padding: 1.8rem;
+  }
+  
+  .feature-icon {
+    width: 65px;
+    height: 65px;
+    font-size: 1.6rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.4rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .feature-card {
+    padding: 1.5rem;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .feature-card {
+    padding: 1.3rem;
+  }
+  
+  .feature-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Improve touch experience */
+  .feature-card {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Improve loading transition */
+@keyframes featureFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card {
+  animation: featureFadeIn 0.6s ease-out forwards;
+  animation-delay: calc(var(--item-index, 0) * 0.1s);
+} 
