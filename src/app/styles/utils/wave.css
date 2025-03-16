@@ -1,0 +1,264 @@
+/* Wave Effect Utilities */
+
+.wave-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top wave divider */
+.wave-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.wave-top .shape-fill {
+  fill: var(--background);
+}
+
+.dark-theme .wave-top .shape-fill {
+  fill: var(--background);
+}
+
+/* Bottom wave divider */
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.wave-bottom .shape-fill {
+  fill: var(--background);
+}
+
+.dark-theme .wave-bottom .shape-fill {
+  fill: var(--background);
+}
+
+/* Wave animations */
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.wave-animated svg {
+  width: 200%;
+  animation: wave 15s linear infinite;
+}
+
+/* Blue wave in dark mode */
+.dark-theme .wave-blue .shape-fill {
+  fill: var(--primary-dark);
+}
+
+/* Light wave in dark mode */
+.dark-theme .wave-light .shape-fill {
+  fill: var(--surface);
+}
+
+/* Wave glow effect for dark theme */
+.dark-theme .wave-glow {
+  position: relative;
+}
+
+.dark-theme .wave-glow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(59, 130, 246, 0.1) 0%, transparent 40%);
+  animation: waveGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes waveGlow {
+  0% {
+    opacity: 0.3;
+    transform: translateX(-5%) translateY(2%);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateX(5%) translateY(-2%);
+  }
+}
+
+/* Wave Transitions Between Sections */
+
+.wave-container {
+  position: relative;
+  background: var(--primary);
+  color: var(--text-on-primary);
+}
+
+.wave-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.wave-bottom .shape-fill {
+  fill: #FFFFFF;
+}
+
+.wave-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.wave-top .shape-fill {
+  fill: var(--primary);
+}
+
+/* Green to white wave */
+.wave-green-to-white {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  height: 70px;
+}
+
+.wave-green-to-white svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-green-to-white .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* White to green wave */
+.wave-white-to-green {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  height: 70px;
+}
+
+.wave-white-to-green svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.wave-white-to-green .shape-fill {
+  fill: var(--primary);
+}
+
+/* Green to light green wave */
+.wave-green-to-light {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-green-to-light svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.wave-green-to-light .shape-fill {
+  fill: #A3B18A;
+}
+
+/* Light green to white wave */
+.wave-light-to-white {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-light-to-white svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 70px;
+}
+
+.wave-light-to-white .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wave-green-to-white,
+  .wave-white-to-green {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wave-green-to-white,
+  .wave-white-to-green {
+    height: 30px;
+  }
+} 

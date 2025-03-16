@@ -1,0 +1,125 @@
+/* Section Layouts */
+
+section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+main {
+  padding-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* Section variations */
+.section-alt {
+  background-color: var(--background-alt);
+}
+
+.section-dark {
+  background-color: var(--primary-dark);
+  color: var(--text-on-dark);
+}
+
+.dark-theme .section-dark {
+  background-color: var(--primary-dark);
+}
+
+.section-header {
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.section-header h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.dark-theme .section-header h2 {
+  color: white;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.dark-theme .section-header h2::after {
+  background: var(--primary-light);
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.section-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: var(--space-md) auto 0;
+}
+
+.dark-theme .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hero section */
+.hero-section {
+  padding: calc(var(--space-xl) * 1.5) 0;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: var(--text-on-dark);
+}
+
+.dark-theme .hero-section {
+  background: linear-gradient(135deg, var(--primary-dark), var(--background));
+}
+
+/* CTA section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--text-on-dark);
+  padding: var(--space-lg) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-theme .cta-section {
+  background: linear-gradient(135deg, var(--primary-dark), var(--background));
+}
+
+/* Wave section styling */
+.wave-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.wave-divider-top {
+  top: 0;
+}
+
+.wave-divider-bottom {
+  bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  section {
+    padding: var(--space-md) 0;
+  }
+  
+  .hero-section {
+    padding: var(--space-lg) 0;
+  }
+} 

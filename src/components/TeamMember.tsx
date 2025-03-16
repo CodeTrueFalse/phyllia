@@ -1,7 +1,7 @@
 'use client';
 
 import { MemberData } from '@/data/teamData';
-import '@/app/styles/TeamMember.css';
+// CSS is now imported via main.css
 
 interface TeamMemberProps {
   member: MemberData;
@@ -19,12 +19,12 @@ export default function TeamMember({ member, index }: TeamMemberProps) {
       .toUpperCase();
 
   // Render social media link if available
-  function SocialLink({ url, icon, label }: { url?: string, icon: string, label: string }) {
+  function SocialLink({ url, icon, label, prefix = 'fab' }: { url?: string, icon: string, label: string, prefix?: string }) {
     if (!url) return null;
     
     return (
       <a href={url} target="_blank" rel="noopener noreferrer" aria-label={label}>
-        <i className={`fab ${icon}`}></i>
+        <i className={`${prefix} ${icon}`}></i>
       </a>
     );
   }
@@ -33,34 +33,32 @@ export default function TeamMember({ member, index }: TeamMemberProps) {
   const profileClass = `placeholder-profile member${(index % 6) + 1}`;
 
   return (
-    <div className="team-card">
-      <div className="team-member-image">
-        {imageUrl ? (
-          <img src={imageUrl} alt={name} className="member-image" />
-        ) : (
-          <div className={profileClass}>
-            <span className="member-initials">{getInitials(name)}</span>
-          </div>
-        )}
-      </div>
-      <div className="team-member-info">
-        <h3>{name}</h3>
-        <h4>{role}</h4>
-        {bio && <p>{bio}</p>}
+    <div className="team-member">
+      {imageUrl ? (
+        <img src={imageUrl} alt={name} className="team-member-image" />
+      ) : (
+        <div className={profileClass}>
+          <span className="member-initials">{getInitials(name)}</span>
+        </div>
+      )}
+      <div className="team-member-content">
+        <h3 className="team-member-name">{name}</h3>
+        <h4 className="team-member-title">{role}</h4>
+        {bio && <p className="team-member-bio">{bio}</p>}
         
         {email && (
-          <div className="team-email">
+          <div className="team-member-email">
             <a href={`mailto:${email}`}>
               <i className="fas fa-envelope"></i> {email}
             </a>
           </div>
         )}
         
-        <div className="team-social">
+        <div className="team-member-social">
           <SocialLink url={socials?.linkedin} icon="fa-linkedin" label="LinkedIn" />
           <SocialLink url={socials?.twitter} icon="fa-twitter" label="Twitter" />
           <SocialLink url={socials?.github} icon="fa-github" label="GitHub" />
-          <SocialLink url={socials?.website} icon="fa-link" label="Website" />
+          <SocialLink url={socials?.website} icon="fa-globe" label="Website" prefix="fas" />
         </div>
       </div>
     </div>

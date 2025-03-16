@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import config from '@/config';
-import '@/app/styles/Footer.css';
 
 interface SocialLinkProps {
   url: string | null;
@@ -26,47 +25,75 @@ export default function Footer() {
   
   return (
     <footer className="footer">
-      <div className="container footer-container">
-        <div className="footer-brand">
-          <h3>{siteName}</h3>
-          <p>IA 100% française alimentée par des énergies renouvelables</p>
-          {contact.email && (
-            <p className="footer-contact">
-              <a href={`mailto:${contact.email}`}>
-                <i className="fas fa-envelope"></i> {contact.email}
+      <div className="container">
+        <div className="footer-main">
+          {/* Left Column - Brand */}
+          <div className="footer-brand">
+            <Link href="/" className="footer-logo">
+              <h3>{siteName}</h3>
+            </Link>
+            <p>IA 100% française alimentée par des énergies renouvelables. Nous mettons l'éthique et la souveraineté numérique au cœur de notre démarche.</p>
+            
+            {contact.email && (
+              <a href={`mailto:${contact.email}`} className="footer-email">
+                <i className="fas fa-envelope"></i>
+                <span>{contact.email}</span>
               </a>
-            </p>
-          )}
-        </div>
-        
-        <div className="footer-links">
-          <div className="footer-links-column">
-            <h4>Navigation</h4>
-            <ul>
-              {navigation.map((item) => (
-                <li key={item.path}>
-                  <Link href={item.path}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="footer-links-column">
-            <h4>Suivez-nous</h4>
+            )}
+            
             <div className="social-links">
               <SocialLink url={social.github} icon="fa-github" label="GitHub" />
               <SocialLink url={social.twitter} icon="fa-twitter" label="Twitter" />
               <SocialLink url={social.linkedin} icon="fa-linkedin" label="LinkedIn" />
-              <SocialLink url={social.instagram} icon="fa-instagram" label="Instagram" />
+              {social.instagram && (
+                <SocialLink url={social.instagram} icon="fa-instagram" label="Instagram" />
+              )}
             </div>
-            <p className="mt-md">Restez informés de nos dernières actualités et suivez notre évolution.</p>
+          </div>
+          
+          {/* Right Column - Navigation */}
+          <div className="footer-nav-columns">
+            {/* Navigation Links */}
+            <div className="footer-nav-column">
+              <h4>Navigation</h4>
+              <ul>
+                {navigation.map((item) => (
+                  <li key={item.path}>
+                    <Link href={item.path}>
+                      <span>{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Services Links */}
+            <div className="footer-nav-column">
+              <h4>Nos Services</h4>
+              <ul>
+                <li><Link href="/services"><span>Nos Solutions</span></Link></li>
+                <li><Link href="/about"><span>À propos de nous</span></Link></li>
+                <li><Link href="/contact"><span>Nous contacter</span></Link></li>
+              </ul>
+            </div>
+            
+            {/* Legal Links */}
+            <div className="footer-nav-column">
+              <h4>Légal</h4>
+              <ul>
+                <li><Link href="/privacy"><span>Politique de confidentialité</span></Link></li>
+                <li><Link href="/terms"><span>Conditions d'utilisation</span></Link></li>
+                <li><Link href="/cookies"><span>Gestion des cookies</span></Link></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div className="footer-bottom">
-        <div className="container">
-          <p>&copy; {currentYear} <a href="https://truefalse.fr" target="_blank" rel="noopener noreferrer">{companyName}</a>. Tous droits réservés.</p>
+        
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <p>
+            &copy; {currentYear} <a href="https://truefalse.fr" target="_blank" rel="noopener noreferrer">{companyName}</a>. Tous droits réservés.
+          </p>
         </div>
       </div>
     </footer>

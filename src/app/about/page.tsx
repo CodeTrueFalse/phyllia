@@ -1,7 +1,9 @@
-import '../styles/About.css';
+// No need to import CSS here as it's already imported via main.css
+import Image from 'next/image';
 
 export const metadata = {
-  title: 'À propos',
+  title: 'À propos | Phyllia - IA française écoresponsable',
+  description: 'Découvrez Phyllia, une intelligence artificielle française engagée dans le développement durable et la souveraineté numérique.',
 };
 
 interface ValueCardProps {
@@ -26,19 +28,43 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="about-hero">
+      <section className="about-hero-section">
         <div className="container">
-          <h1>À propos de Phyllia</h1>
-          <p className="lead">Une intelligence artificielle française engagée dans le développement durable</p>
+          <div className="about-hero">
+            <div className="about-hero-content">
+              <h1 className="about-hero-title">À propos de Phyllia</h1>
+              <p className="about-hero-subtitle">Une intelligence artificielle française engagée dans le développement durable</p>
+              <p className="about-hero-description">
+                Phyllia est née de notre conviction que l'innovation technologique peut et doit être compatible avec 
+                la préservation de notre environnement. Découvrez notre histoire, nos valeurs et notre vision pour 
+                une IA éthique et responsable.
+              </p>
+            </div>
+            <div className="about-hero-image">
+              <div className="about-image-container">
+                <div className="about-image-decoration"></div>
+                <div className="about-image-placeholder">
+                  <div className="about-image-circle">
+                    <div className="about-image-particle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="wave-green-to-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
+            <path d="M0,0 C240,135 480,160 720,120 C960,80 1200,60 1440,120 L1440,160 L0,160 Z" className="shape-fill"></path>
+          </svg>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="mission">
+      <section className="mission-section">
         <div className="container">
           <div className="section-header text-center">
-            <h2>Notre mission</h2>
-            <p>Créer une IA éthique, souveraine et respectueuse de l'environnement</p>
+            <h2 className="mission-title">Notre mission</h2>
+            <p className="section-subtitle">Créer une IA éthique, souveraine et respectueuse de l'environnement</p>
           </div>
           <div className="mission-content">
             <div className="mission-text">
@@ -57,10 +83,27 @@ export default function About() {
                 et la protection des données. Toutes nos infrastructures sont hébergées en France, assurant ainsi un contrôle 
                 total sur les données traitées.
               </p>
+              <div className="mission-stats">
+                <div className="stat-item">
+                  <span className="stat-number">100%</span>
+                  <span className="stat-label">Énergies renouvelables</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">0</span>
+                  <span className="stat-label">Empreinte carbone</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">100%</span>
+                  <span className="stat-label">Hébergement français</span>
+                </div>
+              </div>
             </div>
             <div className="mission-image">
-              <div className="placeholder-image-square">
-                {/* We'll add an appropriate image here */}
+              <div className="mission-image-container">
+                <div className="mission-image-decoration"></div>
+                <div className="mission-image-placeholder">
+                  <i className="fas fa-leaf mission-icon-primary"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -68,11 +111,11 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="values">
+      <section className="values-section">
         <div className="container">
           <div className="section-header text-center">
-            <h2>Nos valeurs</h2>
-            <p>Les principes qui guident le développement de Phyllia</p>
+            <h2 className="values-title">Nos valeurs</h2>
+            <p className="section-subtitle">Les principes qui guident le développement de Phyllia</p>
           </div>
           <div className="values-grid">
             <ValueCard 
@@ -86,7 +129,7 @@ export default function About() {
               description="100% française, Phyllia garantit une indépendance totale et le respect des données."
             />
             <ValueCard 
-              icon="fa-brain" 
+              icon="fa-lightbulb" 
               title="Innovation" 
               description="Nous repoussons les limites de l'IA tout en maintenant notre engagement environnemental."
             />
@@ -95,6 +138,20 @@ export default function About() {
               title="Éthique" 
               description="Le développement et l'utilisation de notre IA respectent des principes éthiques stricts."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="about-cta-section">
+        <div className="container text-center">
+          <h2 className="about-cta-title">Prêt à découvrir Phyllia ?</h2>
+          <p className="about-cta-description">
+            Rejoignez-nous dans cette aventure pour une technologie plus responsable et éthique.
+          </p>
+          <div className="about-cta-buttons">
+            <a href="/contact" className="btn btn-primary">Nous contacter</a>
+            <a href="/team" className="btn btn-secondary">Découvrir notre équipe</a>
           </div>
         </div>
       </section>
