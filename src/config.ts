@@ -6,44 +6,12 @@
  * contact information, etc.
  */
 
-interface NavigationItem {
+export interface NavigationItem {
   name: string;
   path: string;
 }
 
-interface ContactInfo {
-  email: string | null;
-  phone: string | null;
-  address: string | null;
-}
-
-interface SocialLinks {
-  github: string | null;
-  twitter: string | null;
-  linkedin: string | null;
-  instagram: string | null;
-}
-
-interface Images {
-  logo: string | null;
-  hero: string | null;
-  about: string | null;
-  og: string | null;
-}
-
-interface SiteConfig {
-  siteName: string;
-  siteTagline: string;
-  siteDescription: string;
-  companyName: string;
-  companyFoundedYear: number;
-  contact: ContactInfo;
-  social: SocialLinks;
-  navigation: NavigationItem[];
-  images: Images;
-}
-
-const config: SiteConfig = {
+const config = {
   // Site information
   siteName: 'Phyllia',
   siteTagline: 'IA 100% française et écoresponsable',

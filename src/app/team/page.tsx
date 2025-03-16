@@ -69,21 +69,7 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Join Team Section */}
-      <section className="join-team-section">
-        <div className="container">
-          <div className="join-team-content">
-            <h2 className="join-team-title">Rejoignez notre équipe</h2>
-            <p className="join-team-description">
-              Vous partagez notre vision d'une IA éthique et écoresponsable ? Nous sommes toujours à la recherche de talents passionnés pour nous aider à construire l'avenir de l'intelligence artificielle.
-            </p>
-            <div className="join-team-buttons">
-              <Link href="/careers" className="btn btn-primary">Voir nos offres</Link>
-              <Link href="/contact" className="btn btn-secondary">Nous contacter</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </>
   );
 } 

@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stackServerApp } from './stack';
+import "server-only";
+import { StackServerApp } from "@stackframe/stack";
+
+// Create the stack server app instance
+export const stackServerApp = new StackServerApp({
+  tokenStore: "nextjs-cookie",
+});
 
 export async function middleware(request: NextRequest) {
   // Only protect the /chat route

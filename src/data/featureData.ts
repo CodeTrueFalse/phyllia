@@ -1,11 +1,5 @@
 /**
- * Features data
- * 
- * This file contains information about features of Phyllia.
- * Update this file to add, remove, or modify features.
- * 
- * Icons are using Font Awesome. You can find more icons at:
- * https://fontawesome.com/icons?d=gallery&s=solid
+ * Features data for Phyllia
  */
 
 export interface Feature {

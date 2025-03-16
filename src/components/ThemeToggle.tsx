@@ -1,13 +1,11 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 // CSS is now imported via main.css
 
 export default function ThemeToggle() {
   // Initialize with system preference, but use localStorage if available
   const [isDarkMode, setIsDarkMode] = useState<boolean | null>(null);
-  const [isChanging, setIsChanging] = useState(false);
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
   // On mount, check for saved theme preference or system preference
   useEffect(() => {
@@ -41,13 +39,7 @@ export default function ThemeToggle() {
   }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsChanging(true);
-    setTimeout(() => {
-      setIsDarkMode(!isDarkMode);
-      setTimeout(() => {
-        setIsChanging(false);
-      }, 500); // Match the duration of the animation
-    }, 150); // Small delay before actually changing the theme
+    setIsDarkMode(!isDarkMode);
   };
 
   // Don't render until we've determined the initial state
@@ -55,8 +47,7 @@ export default function ThemeToggle() {
 
   return (
     <button 
-      ref={buttonRef}
-      className={`theme-toggle ${isChanging ? 'theme-changing' : ''}`}
+      className="theme-toggle"
       onClick={toggleTheme}
       aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       title={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}

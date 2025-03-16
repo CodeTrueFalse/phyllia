@@ -52,9 +52,9 @@
 
 /* Primary Button */
 .btn-primary {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 1);
   color: var(--text-on-primary);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-primary:hover {
@@ -66,7 +66,7 @@
 }
 
 .dark-theme .btn-primary {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .dark-theme .btn-primary:hover {

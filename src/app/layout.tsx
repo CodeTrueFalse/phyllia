@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackServerApp } from "../stack";
+import { stackServerApp } from "../middleware";
 import { Roboto, Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -78,24 +78,9 @@ function ThemeScript() {
       dangerouslySetInnerHTML={{
         __html: `
           (function() {
-            // Get theme from localStorage or system preference
             const theme = localStorage.getItem('theme') || 
               (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            
-            // Apply theme immediately to prevent flash
             document.documentElement.classList.add(theme === 'dark' ? 'dark-theme' : 'light-theme');
-            document.documentElement.classList.remove(theme === 'dark' ? 'light-theme' : 'dark-theme');
-            
-            // Update theme meta tag for browser UI
-            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-            if (metaThemeColor) {
-              metaThemeColor.setAttribute('content', theme === 'dark' ? '#0B1120' : '#F0EFE9');
-            }
-            
-            // Enable transitions after initial load
-            window.addEventListener('DOMContentLoaded', () => {
-              setTimeout(() => document.documentElement.classList.add('theme-transition-ready'), 100);
-            });
           })();
         `,
       }}
@@ -111,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${roboto.variable} ${montserrat.variable}`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#F0EFE9" />
         <link 
           rel="stylesheet" 
