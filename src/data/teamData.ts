@@ -1,21 +1,6 @@
 /**
  * Team members data
- * 
- * This file contains information about team members.
- * Update this file to add, remove, or modify team members.
- * 
- * Image path should be relative to the public folder:
- * For example: '/images/team/member1.jpg'
- * 
- * If no image is provided, a placeholder with the member's initials will be shown.
  */
-
-interface SocialLinks {
-  linkedin?: string;
-  twitter?: string;
-  github?: string;
-  website?: string;
-}
 
 export interface MemberData {
   id: string | number;
@@ -24,7 +9,12 @@ export interface MemberData {
   bio?: string;
   imageUrl?: string | null;
   email?: string;
-  socials?: SocialLinks;
+  socials?: {
+    linkedin?: string;
+    twitter?: string;
+    github?: string;
+    website?: string;
+  };
 }
 
 const teamMembers: MemberData[] = [
@@ -33,7 +23,7 @@ const teamMembers: MemberData[] = [
     name: 'Hugo Sibony',
     role: 'Co-Fondateur, Président & CTO',
     bio: 'Direction stratégique et technique de TrueFalse.',
-    imageUrl: '/images/team/hugo_sibony.jpg', // Add image to this path
+    imageUrl: '/images/team/hugo_sibony.jpg',
     socials: {
       linkedin: 'https://linkedin.com/in/hsibony',
       github: 'https://github.com/kazetachinuu',
@@ -46,7 +36,7 @@ const teamMembers: MemberData[] = [
     name: 'Maxence Leclercq',
     role: 'Co-Fondateur & Directeur Général',
     bio: 'Gestion des opérations et croissance de l\'entreprise.',
-    imageUrl: '/images/team/maxence_leclercq.jpg', // Add image to this path
+    imageUrl: '/images/team/maxence_leclercq.jpg',
     socials: {
       linkedin: 'https://www.linkedin.com/in/maxence-leclercq-94195b222/',
       github: 'https://github.com/Cargaison'
@@ -58,7 +48,7 @@ const teamMembers: MemberData[] = [
     name: 'Ilyes Benahmed',
     role: 'Directeur Commercial',
     bio: 'Stratégie commerciale et développement partenariats.',
-    imageUrl: '/images/team/ilyes_benahmed.png', // Add image to this path
+    imageUrl: '/images/team/ilyes_benahmed.png',
     socials: {
       linkedin: 'https://www.linkedin.com/in/ilyes-benahmed/'
     },
@@ -69,7 +59,7 @@ const teamMembers: MemberData[] = [
     name: 'Tanguy Libert',
     role: 'Directeur des Opérations',
     bio: 'Coordination des processus opérationnels.',
-    imageUrl: '/images/team/tanguy_libert.jpg', // Add image to this path
+    imageUrl: '/images/team/tanguy_libert.jpg',
     socials: {
       linkedin: 'https://www.linkedin.com/in/tanguy-libert-157653221/'
     },
@@ -80,7 +70,7 @@ const teamMembers: MemberData[] = [
     name: 'Rémy Le Bohec',
     role: 'Responsable Cybersécurité',
     bio: '',
-    imageUrl: null, // Add image path when available: '/images/team/remy_lebohec.jpg'
+    imageUrl: null,
     socials: {
       linkedin: 'https://www.linkedin.com/in/rémy-le-bohec/'
     },

@@ -1,6 +1,5 @@
-import { stackServerApp } from '@/stack';
+import { stackServerApp } from '@/middleware';
 import ChatInterface from '@/components/ChatInterface';
-import '@/app/styles/components/chat.css';
 
 export const metadata = {
   title: 'Chat with Phyllia | Phyllia',

@@ -66,26 +66,6 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            
-            {/* Services Links */}
-            <div className="footer-nav-column">
-              <h4>Nos Services</h4>
-              <ul>
-                <li><Link href="/services"><span>Nos Solutions</span></Link></li>
-                <li><Link href="/about"><span>À propos de nous</span></Link></li>
-                <li><Link href="/contact"><span>Nous contacter</span></Link></li>
-              </ul>
-            </div>
-            
-            {/* Legal Links */}
-            <div className="footer-nav-column">
-              <h4>Légal</h4>
-              <ul>
-                <li><Link href="/privacy"><span>Politique de confidentialité</span></Link></li>
-                <li><Link href="/terms"><span>Conditions d'utilisation</span></Link></li>
-                <li><Link href="/cookies"><span>Gestion des cookies</span></Link></li>
-              </ul>
-            </div>
           </div>
         </div>
         

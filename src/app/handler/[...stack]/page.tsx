@@ -1,5 +1,5 @@
 import { StackHandler } from "@stackframe/stack";
-import { stackServerApp } from "../../../stack";
+import { stackServerApp } from "../../../middleware";
 
 export default function Handler(props: unknown) {
   return (

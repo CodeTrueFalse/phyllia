@@ -31,19 +31,13 @@ export default function Navbar() {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
-      document.body.classList.add('menu-open');
     } else {
       document.body.style.overflow = '';
-      document.body.classList.remove('menu-open');
     }
     return () => {
       document.body.style.overflow = '';
-      document.body.classList.remove('menu-open');
     };
   }, [isMenuOpen]);
-
-  // No need to filter navigation items anymore
-  const navigationItems = config.navigation;
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -57,7 +51,7 @@ export default function Navbar() {
         </Link>
 
         <ul className={`navbar-nav ${isMenuOpen ? 'active' : ''}`}>
-          {navigationItems.map((item) => (
+          {config.navigation.map((item) => (
             <li key={item.path} className="nav-item">
               <Link 
                 href={item.path}

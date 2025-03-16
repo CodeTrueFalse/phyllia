@@ -7,7 +7,6 @@ interface CardProps {
   className?: string;
   variant?: 'default' | 'primary' | 'secondary' | 'outline';
   hover?: boolean;
-  animation?: boolean;
   onClick?: () => void;
   style?: React.CSSProperties;
 }
@@ -20,28 +19,20 @@ export default function Card({
   className = '',
   variant = 'default',
   hover = true,
-  animation = false,
   onClick,
   style
 }: CardProps) {
-  const baseClass = 'card';
-  const variantClass = variant !== 'default' ? `card-${variant}` : '';
-  const hoverClass = hover ? 'card-hover' : '';
-  const animationClass = animation ? 'card-animation' : '';
-  const clickableClass = onClick ? 'card-clickable' : '';
-  
-  const combinedClassName = [
-    baseClass,
-    variantClass,
-    hoverClass,
-    animationClass,
-    clickableClass,
+  const classes = [
+    'card',
+    variant !== 'default' ? `card-${variant}` : '',
+    hover ? 'card-hover' : '',
+    onClick ? 'card-clickable' : '',
     className
   ].filter(Boolean).join(' ');
   
   return (
     <div 
-      className={combinedClassName}
+      className={classes}
       onClick={onClick}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
@@ -57,15 +48,13 @@ export default function Card({
  */
 export function CardHeader({ 
   children, 
-  className = '',
-  style
+  className = ''
 }: { 
   children: React.ReactNode; 
   className?: string;
-  style?: React.CSSProperties;
 }) {
   return (
-    <div className={`card-header ${className}`} style={style}>
+    <div className={`card-header ${className}`}>
       {children}
     </div>
   );
@@ -76,15 +65,13 @@ export function CardHeader({
  */
 export function CardBody({ 
   children, 
-  className = '',
-  style
+  className = ''
 }: { 
   children: React.ReactNode; 
   className?: string;
-  style?: React.CSSProperties;
 }) {
   return (
-    <div className={`card-body ${className}`} style={style}>
+    <div className={`card-body ${className}`}>
       {children}
     </div>
   );
@@ -95,15 +82,13 @@ export function CardBody({
  */
 export function CardFooter({ 
   children, 
-  className = '',
-  style
+  className = ''
 }: { 
   children: React.ReactNode; 
   className?: string;
-  style?: React.CSSProperties;
 }) {
   return (
-    <div className={`card-footer ${className}`} style={style}>
+    <div className={`card-footer ${className}`}>
       {children}
     </div>
   );

@@ -8,6 +8,17 @@ interface TeamMemberProps {
   index: number;
 }
 
+// Extracted SocialLink component
+function SocialLink({ url, icon, label, prefix = 'fab' }: { url?: string, icon: string, label: string, prefix?: string }) {
+  if (!url) return null;
+  
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer" aria-label={label}>
+      <i className={`${prefix} ${icon}`}></i>
+    </a>
+  );
+}
+
 export default function TeamMember({ member, index }: TeamMemberProps) {
   const { name, role, bio, imageUrl, socials, email } = member;
   
@@ -17,17 +28,6 @@ export default function TeamMember({ member, index }: TeamMemberProps) {
       .map(word => word[0])
       .join('')
       .toUpperCase();
-
-  // Render social media link if available
-  function SocialLink({ url, icon, label, prefix = 'fab' }: { url?: string, icon: string, label: string, prefix?: string }) {
-    if (!url) return null;
-    
-    return (
-      <a href={url} target="_blank" rel="noopener noreferrer" aria-label={label}>
-        <i className={`${prefix} ${icon}`}></i>
-      </a>
-    );
-  }
 
   // Calculate profile class based on index
   const profileClass = `placeholder-profile member${(index % 6) + 1}`;
