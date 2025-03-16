@@ -1,0 +1,104 @@
+/**
+ * Main Stylesheet - Organizes imports in a logical cascading order
+ */
+
+/* 1. Theme Variables - Define all color variables and design tokens */
+@import './themes/variables.css';
+
+/* 2. Base Styles - Fundamental styling and resets */
+@import './base/reset.css';
+@import './base/typography.css';
+
+/* 3. Layout - Grid system and section layouts */
+@import './layout/grid.css';
+@import './layout/sections.css';
+
+/* 4. Components - Individual UI components */
+@import './components/buttons.css';
+@import './components/card.css';
+@import './components/navbar.css';
+@import './components/theme-toggle.css';
+@import './components/auth.css';
+@import './components/chat.css';
+@import './components/team.css';
+@import './components/features.css';
+@import './components/footer.css';
+
+/* 5. Page-specific styles */
+@import './pages/home.css';
+@import './pages/about.css';
+@import './pages/team.css';
+
+/* 6. Utils - Utility classes and helpers */
+@import './utils/helpers.css';
+@import './utils/wave.css';
+
+/**
+ * Theme Transitions - Controls how theme changes are animated
+ */
+html {
+  transition: none; /* Start with no transitions for initial load */
+}
+
+html.theme-transition-ready {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+html.theme-transition-ready * {
+  transition: background-color 0.5s ease, color 0.5s ease, 
+              border-color 0.5s ease, box-shadow 0.5s ease,
+              transform 0.3s ease, opacity 0.3s ease;
+}
+
+/**
+ * Stack Auth Container Styling
+ */
+.stack-auth-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+  min-height: calc(100vh - var(--header-height) - 300px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stack Auth Form Styling */
+.stack-auth-container form {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.dark-theme .stack-auth-container form {
+  background-color: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+/* Stack Auth Button Styling */
+.stack-auth-container button {
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.stack-auth-container button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.dark-theme .stack-auth-container button {
+  background-color: var(--primary);
+}
+
+.dark-theme .stack-auth-container button:hover {
+  background-color: var(--primary-light);
+} 

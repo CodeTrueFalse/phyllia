@@ -1,89 +1,33 @@
-'use client';
+import { stackServerApp } from '@/stack';
+import ChatInterface from '@/components/ChatInterface';
+import '@/app/styles/components/chat.css';
 
-import { useUser, useStackApp, UserButton, SignIn } from '@stackframe/stack';
-import { useState } from 'react';
-import styles from '../styles/chat.module.css';
+export const metadata = {
+  title: 'Chat with Phyllia | Phyllia',
+  description: 'Chat with Phyllia, our AI assistant designed to help you with your questions and tasks.',
+};
 
-export default function ChatPage() {
-  const user = useUser();
-  const app = useStackApp();
-  const [messages, setMessages] = useState<{ text: string; sender: string; timestamp: Date }[]>([
-    { text: 'Bienvenue sur Phyllia Chat!', sender: 'system', timestamp: new Date() }
-  ]);
-  const [inputValue, setInputValue] = useState('');
-
-  const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inputValue.trim() || !user) return;
-
-    const newMessage = {
-      text: inputValue,
-      sender: 'user',
-      timestamp: new Date()
-    };
-
-    setMessages([...messages, newMessage]);
-    setInputValue('');
-
-    // Simulate AI response
-    setTimeout(() => {
-      setMessages(prev => [
-        ...prev,
-        {
-          text: "Merci pour votre message! Votre demande a été reçue, nous vous répondrons bientôt.",
-          sender: 'ai',
-          timestamp: new Date()
-        }
-      ]);
-    }, 1000);
-  };
-
+export default async function ChatPage() {
+  const user = await stackServerApp.getUser();
+  
   if (!user) {
-    return (
-      <div className="stack-auth-container">
-        <SignIn />
-      </div>
-    );
+    return null; // This should be handled by middleware, but just in case
   }
 
+  const displayName = user.displayName || user.primaryEmail?.split('@')[0] || 'there';
+
   return (
-    <div className={styles.chatContainer}>
-      <div className={styles.chatHeader}>
-        <h1>Phyllia Chat</h1>
-        <div className={styles.userProfile}>
-          <span>Bonjour, {user.displayName || 'Utilisateur'}</span>
-          <UserButton />
+    <main className="container">
+      <div className="chat-container">
+        <div className="chat-header">
+          <h1>Chat with Phyllia</h1>
+          <p>Hello, {displayName}! I'm Phyllia, your AI assistant. Ask me anything about our services, sustainability, or how I can help you today.</p>
+        </div>
+        
+        <div className="container">
+          <ChatInterface userId={user.id} />
         </div>
       </div>
-
-      <div className={styles.messageList}>
-        {messages.map((msg, index) => (
-          <div 
-            key={index} 
-            className={`${styles.message} ${styles[msg.sender]}`}
-          >
-            <div className={styles.messageContent}>
-              <p>{msg.text}</p>
-              <span className={styles.timestamp}>
-                {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <form onSubmit={handleSendMessage} className={styles.inputArea}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Tapez votre message ici..."
-          className={styles.messageInput}
-        />
-        <button type="submit" className={styles.sendButton}>
-          Envoyer
-        </button>
-      </form>
-    </div>
+    </main>
   );
 } 

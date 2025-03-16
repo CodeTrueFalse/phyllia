@@ -54,16 +54,16 @@ const config: SiteConfig = {
   // Contact information
   contact: {
     email: 'contact@truefalse.fr',
-    phone: null, // Add when available: '+33 1 23 45 67 89'
-    address: null, // Add when available: '123 Rue de l\'Innovation, 75001 Paris, France'
+    phone: '+33 1 23 45 67 89',
+    address: '123 Avenue de la République, 75011 Paris, France',
   },
   
   // Social media links
   social: {
-    github: 'https://github.com/codetruefalse',
-    twitter: null, // Add when available: 'https://twitter.com/phyllia_ai'
-    linkedin: null, // Add when available: 'https://linkedin.com/company/truefalse'
-    instagram: null, // Add when available: 'https://instagram.com/phyllia_ai'
+    github: 'https://github.com/truefalse',
+    twitter: 'https://twitter.com/truefalse',
+    linkedin: 'https://linkedin.com/company/truefalse',
+    instagram: null,
   },
   
   // Main navigation links
@@ -76,10 +76,10 @@ const config: SiteConfig = {
   
   // Images paths
   images: {
-    logo: '/images/logo.svg', // Replace with actual logo path when available
+    logo: '/logo.svg',
     hero: '/images/hero.jpg', // Replace with actual hero image path when available
     about: '/images/about.jpg', // Replace with actual about image path when available
-    og: '/images/og-image.jpg', // Open Graph image for social sharing
+    og: '/og-image.jpg', // Open Graph image for social sharing
   }
 };
 

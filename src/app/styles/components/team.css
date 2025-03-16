@@ -1,0 +1,200 @@
+/* Team Members Component Styling */
+
+.team-section {
+  padding: var(--space-xl) 0;
+  background-color: var(--background);
+  position: relative;
+}
+
+.dark-theme .team-section {
+  background-color: var(--background);
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Team member card */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dark-theme .team-member {
+  background-color: var(--surface-dark);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dark-theme .team-member:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(117, 170, 122, 0.1);
+}
+
+/* Team member image */
+.team-member-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+/* Placeholder profile for when no image is available */
+.placeholder-profile {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
+  color: var(--text-on-dark);
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.dark-theme .placeholder-profile {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--surface-dark) 100%);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.member-initials {
+  letter-spacing: 1px;
+}
+
+/* Team member content */
+.team-member-content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+
+.team-member-name {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-headings);
+}
+
+.team-member-title {
+  font-size: var(--text-sm);
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+
+.team-member-bio {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+  flex: 1;
+}
+
+/* Team member email */
+.team-member-email {
+  margin-top: auto;
+  margin-bottom: var(--space-sm);
+}
+
+.team-member-email a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-size: 0.95rem;
+  transition: all var(--transition-normal);
+}
+
+.team-member-email a:hover {
+  color: var(--primary-dark);
+  transform: translateX(3px);
+}
+
+.dark-theme .team-member-email a {
+  color: var(--primary-light);
+}
+
+.dark-theme .team-member-email a:hover {
+  color: var(--text-on-dark);
+}
+
+/* Team member social links */
+.team-member-social {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+
+.team-member-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background-color: var(--background-alt);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.dark-theme .team-member-social a {
+  background-color: var(--surface);
+  color: var(--text-secondary);
+}
+
+.team-member-social a:hover {
+  background-color: var(--primary);
+  color: var(--text-on-primary);
+  transform: translateY(-2px);
+}
+
+.dark-theme .team-member-social a:hover {
+  box-shadow: 0 0 10px rgba(117, 170, 122, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    padding: 0 var(--space-sm);
+  }
+  
+  .team-member-image, 
+  .placeholder-profile {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-member-image,
+  .placeholder-profile {
+    height: 220px;
+  }
+  
+  .placeholder-profile {
+    font-size: 3rem;
+  }
+} 

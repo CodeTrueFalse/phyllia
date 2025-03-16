@@ -1,0 +1,183 @@
+/* Theme Variables - Central configuration for all color and design tokens */
+
+:root {
+  /* ===== Base Colors - Light Theme ===== */
+  --primary: #3A5A40;
+  --primary-dark: #2D3F2F;
+  --primary-light: #A3B18A;
+  --accent: #B5C1A3;
+  
+  /* Background colors */
+  --background: #FFFFFF;
+  --background-alt: #F8F8F3;
+  --surface: #FFFFFF;
+  --surface-variant: #F5F4F0;
+  --card-bg: linear-gradient(to bottom, #ffffff, #f9f9f7);
+  
+  /* Text colors */
+  --text-primary: #222222;
+  --text-secondary: #444444;
+  --text-tertiary: #666666;
+  --text-on-primary: #FFFFFF;
+  --text-on-dark: #FFFFFF;
+  --text-muted: rgba(34, 34, 34, 0.8);
+  
+  /* Status colors */
+  --success: #38A169;
+  --warning: #ED8936;
+  --error: #E53E3E;
+  --info: #4299E1;
+  
+  /* Borders & dividers */
+  --divider: rgba(0, 0, 0, 0.1);
+  --border: rgba(0, 0, 0, 0.15);
+  
+  /* ===== UI Elements ===== */
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 6px 16px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 12px 20px rgba(58, 90, 64, 0.1), 0 2px 6px rgba(58, 90, 64, 0.05);
+  
+  /* ===== Typography ===== */
+  --font-main: var(--font-roboto), 'Roboto', system-ui, sans-serif;
+  --font-headings: var(--font-montserrat), 'Montserrat', system-ui, sans-serif;
+  
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+  --text-xl: 1.25rem;   /* 20px */
+  --text-2xl: 1.5rem;   /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem;  /* 36px */
+  --text-5xl: 3rem;     /* 48px */
+  
+  /* ===== Spacing ===== */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 2rem;     /* 32px */
+  --space-lg: 3rem;     /* 48px */
+  --space-xl: 5rem;     /* 80px */
+  
+  /* ===== Border Radius ===== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* ===== Transitions ===== */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* ===== Component-specific variables ===== */
+  --header-height: 80px;
+  --navbar-bg: var(--primary);
+  --navbar-bg-scrolled: var(--primary);
+  --navbar-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --footer-bg: var(--primary);
+  --footer-text: var(--text-on-dark);
+  --card-padding: 1.75rem;
+  --button-min-height: 44px;
+  --button-padding: 0.75rem 1.5rem;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  /* ===== Base Colors - Dark Theme ===== */
+  --primary: #4A6D5D;         /* Darker, more muted green for better dark mode integration */
+  --primary-dark: #2D3F2F;
+  --primary-light: #5E8A70;   /* Less saturated green for better dark mode integration */
+  --accent: #4E6A5C;          /* Muted accent color for dark theme */
+  
+  /* Background colors */
+  --background: #121820;
+  --background-alt: #1E2A3A;
+  --surface: #1E293B;
+  --surface-dark: #151E2C;
+  --surface-variant: #2A3747;
+  --card-bg: none;
+  
+  /* Text colors */
+  --text-primary: #E2E8F0;
+  --text-secondary: #CBD5E0;
+  --text-tertiary: #A0AEC0;
+  --text-on-primary: #FFFFFF;
+  --text-on-dark: #F7FAFC;
+  --text-muted: rgba(226, 232, 240, 0.8);
+  
+  /* Status colors - adjusted for dark mode */
+  --success: #68D391;
+  --warning: #F6AD55;
+  --error: #FC8181;
+  --info: #63B3ED;
+  
+  /* Borders & dividers */
+  --divider: rgba(255, 255, 255, 0.1);
+  --divider-dark: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.15);
+  
+  /* ===== UI Elements ===== */
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-card: var(--shadow-sm);
+  --shadow-card-hover: var(--shadow-md);
+  
+  /* ===== Component-specific variables ===== */
+  --navbar-bg: rgba(18, 24, 32, 0.85);
+  --navbar-bg-scrolled: rgba(18, 24, 32, 0.95);
+  --navbar-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --footer-bg: #0A101B;
+  --footer-text: #E2E8F0;
+}
+
+/* System Preference Detection */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light-theme):not(.dark-theme) {
+    /* Apply dark theme variables to users who haven't set a preference */
+    /* Same variables as .dark-theme */
+    --primary: #4A6D5D;
+    --primary-dark: #2D3F2F;
+    --primary-light: #5E8A70;
+    --accent: #4E6A5C;
+    
+    --background: #121820;
+    --background-alt: #1E2A3A;
+    --surface: #1E293B;
+    --surface-dark: #151E2C;
+    --surface-variant: #2A3747;
+    --card-bg: none;
+    
+    --text-primary: #E2E8F0;
+    --text-secondary: #CBD5E0;
+    --text-tertiary: #A0AEC0;
+    --text-on-primary: #FFFFFF;
+    --text-on-dark: #F7FAFC;
+    --text-muted: rgba(226, 232, 240, 0.8);
+    
+    --success: #68D391;
+    --warning: #F6AD55;
+    --error: #FC8181;
+    --info: #63B3ED;
+    
+    --divider: rgba(255, 255, 255, 0.1);
+    --divider-dark: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.15);
+    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+    --shadow-card: var(--shadow-sm);
+    --shadow-card-hover: var(--shadow-md);
+    
+    --navbar-bg: rgba(18, 24, 32, 0.85);
+    --navbar-bg-scrolled: rgba(18, 24, 32, 0.95);
+    --navbar-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --footer-bg: #0A101B;
+    --footer-text: #E2E8F0;
+  }
+} 

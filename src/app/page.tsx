@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Feature from '@/components/Feature';
 import features from '@/data/featureData';
-import './styles/Home.css';
+import Card, { CardBody } from '@/components/Card';
 
 export default function Home() {
   return (
@@ -30,9 +30,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hero-wave">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#F5F4F0" fillOpacity="1" d="M0,160L60,138.7C120,117,240,75,360,74.7C480,75,600,117,720,149.3C840,181,960,203,1080,181.3C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        <div className="wave-green-to-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none">
+            <path d="M0,0 C240,135 480,160 720,120 C960,80 1200,60 1440,120 L1440,160 L0,160 Z" className="shape-fill"></path>
           </svg>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function Home() {
             <p>Découvrez les avantages de notre intelligence artificielle écoresponsable</p>
           </div>
           
-          <div className="features-grid">
+          <div className="card-grid">
             {features.map(({ id, icon, title, description }, index) => (
               <Feature 
                 key={id}
@@ -57,17 +57,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="cta">
-        <div className="container text-center">
-          <h2>Prêt à découvrir Phyllia ?</h2>
-          <p>Rejoignez-nous dans cette aventure innovante et écoresponsable</p>
-          <Link href="/about" className="btn btn-primary">En savoir plus</Link>
-        </div>
-        <div className="decorative-circle"></div>
-        <div className="decorative-circle"></div>
       </section>
     </>
   );

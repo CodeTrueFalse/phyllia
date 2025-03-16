@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from './ThemeToggle';
 import config from '@/config';
-import '@/app/styles/Navbar.css';
+// CSS is now imported via main.css
 
 /**
- * Navbar component for site-wide navigation
- * @returns {JSX.Element}
+ * Modern Navbar component
  */
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,6 +42,9 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
+  // No need to filter navigation items anymore
+  const navigationItems = config.navigation;
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
@@ -53,23 +56,12 @@ export default function Navbar() {
           )}
         </Link>
 
-        <button 
-          className={`navbar-menu-toggle ${isMenuOpen ? 'active' : ''}`} 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-          {config.navigation.map((item) => (
-            <li key={item.path}>
+        <ul className={`navbar-nav ${isMenuOpen ? 'active' : ''}`}>
+          {navigationItems.map((item) => (
+            <li key={item.path} className="nav-item">
               <Link 
                 href={item.path}
-                className={pathname === item.path ? 'active' : ''}
+                className={`nav-link ${pathname === item.path ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
                 aria-current={pathname === item.path ? 'page' : undefined}
               >
@@ -78,6 +70,21 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+
+        <div className="navbar-actions">
+          <ThemeToggle />
+          
+          <button 
+            className={`mobile-toggle ${isMenuOpen ? 'active' : ''}`} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </nav>
   );
