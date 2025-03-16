@@ -52,25 +52,28 @@
 
 /* Primary Button */
 .btn-primary {
-  background-color: rgba(255, 255, 255, 1);
-  color: var(--text-on-primary);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-dark, #2c5530);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  text-shadow: none;
 }
 
 .btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.btn-primary:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.dark-theme .btn-primary {
   background-color: rgba(255, 255, 255, 1);
 }
 
+.btn-primary:active {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-theme .btn-primary {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-dark, #2c5530);
+}
+
 .dark-theme .btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /* Secondary Button */
