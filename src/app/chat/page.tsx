@@ -1,5 +1,6 @@
 import { stackServerApp } from '@/middleware';
 import ChatInterface from '@/components/ChatInterface';
+import './page-styles.css'; // Import CSS to hide footer
 
 export const metadata = {
   title: 'Chat with Phyllia | Phyllia',
