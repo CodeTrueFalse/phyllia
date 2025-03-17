@@ -4,7 +4,7 @@ import { StackServerApp } from "@stackframe/stack";
 
 // Create the stack server app instance
 export const stackServerApp = new StackServerApp({
-  tokenStore: "nextjs-cookie",
+  tokenStore: "nextjs-cookie"
 });
 
 export async function middleware(request: NextRequest) {

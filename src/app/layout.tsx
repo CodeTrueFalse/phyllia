@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "../middleware";
 import { Roboto, Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import config from "@/config";
@@ -105,13 +106,16 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body>
-        <StackProvider app={stackServerApp}>
+        <StackProvider 
+          app={stackServerApp}
+        >
           <StackTheme theme={stackTheme}>
             <Navbar />
             <main>{children}</main>
             <Footer />
           </StackTheme>
         </StackProvider>
+        <Analytics />
       </body>
     </html>
   );

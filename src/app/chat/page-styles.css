@@ -1,4 +1,269 @@
-/* Hide footer on chat page */
-footer {
+/* Hide footer ONLY on chat page */
+body[data-route="/chat"] footer {
   display: none !important;
+}
+
+/* CSS variables */
+:root {
+  --primary-rgb: 58, 90, 64; /* RGB values for primary color */
+}
+
+.dark-theme {
+  --primary-rgb: 74, 109, 93; /* Darker shade for dark theme */
+}
+
+/* Make main container fill the screen without scrolling - ONLY FOR CHAT PAGE */
+body[data-route="/chat"] .container {
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+
+/* Private Beta Page Styles */
+.chat-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--primary) 1%, transparent 6%),
+    radial-gradient(circle at 75% 75%, var(--primary) 1%, transparent 6%),
+    radial-gradient(circle at 50% 10%, var(--primary-light) 1%, transparent 12%),
+    radial-gradient(circle at 85% 30%, var(--primary-light) 1%, transparent 8%),
+    radial-gradient(circle at 15% 60%, var(--primary-light) 1%, transparent 10%);
+  background-size: 80px 80px;
+  animation: moveBackground 120s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 500px 500px;
+  }
+}
+
+.private-beta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(var(--primary-rgb), 0.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(var(--primary-rgb), 0.05);
+  animation: fadeIn 0.8s ease-out;
+  z-index: 1;
+}
+
+.dark-theme .private-beta-content {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Beta badge */
+.beta-badge {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(58, 90, 64, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.beta-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+.private-beta-content h1 {
+  font-size: 2.75rem;
+  background: linear-gradient(to right, var(--primary-dark) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.welcome-message {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.beta-message {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-light) 0%, var(--primary) 100%);
+  border-radius: 2px;
+  margin: 0.5rem 0 2.5rem 0;
+}
+
+.account-access {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--surface);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--divider);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.dark-theme .account-access {
+  background-color: var(--surface-dark);
+  border-color: var(--divider-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.account-access:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.dark-theme .account-access:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.account-access p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.user-button-wrapper {
+  transform: scale(1.4);
+  transition: transform 0.3s ease;
+}
+
+.user-button-wrapper:hover {
+  transform: scale(1.5);
+}
+
+/* Style the Stack Auth UserButton to match the site design */
+[data-sf-stack] {
+  --sf-primary-color: var(--primary);
+  --sf-border-radius: var(--radius-md);
+}
+
+@media (max-width: 768px) {
+  .private-beta-content {
+    padding: 3rem 1.5rem;
+    margin: 0 auto;
+  }
+  
+  .private-beta-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .welcome-message {
+    font-size: 1.3rem;
+  }
+  
+  .beta-message {
+    font-size: 1.1rem;
+  }
+  
+  .account-access {
+    padding: 1.2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .private-beta-content {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+  
+  .private-beta-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .welcome-message {
+    font-size: 1.1rem;
+  }
+  
+  .beta-message {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .beta-badge {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
 } 
