@@ -2,10 +2,11 @@ import Link from 'next/link';
 import Feature from '@/components/Feature';
 import features from '@/data/featureData';
 import Card, { CardBody } from '@/components/Card';
+import HomeWrapper from '@/components/HomeWrapper';
 
 export default function Home() {
   return (
-    <>
+    <HomeWrapper>
       {/* Hero Section */}
       <section className="hero">
         <div className="container hero-container">
@@ -58,6 +59,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </HomeWrapper>
   );
 }

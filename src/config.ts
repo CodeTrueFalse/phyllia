@@ -44,7 +44,7 @@ const config = {
   
   // Images paths
   images: {
-    logo: '/logo.svg',
+    logo: '/favicon.svg',
     hero: '/images/hero.jpg', // Replace with actual hero image path when available
     about: '/images/about.jpg', // Replace with actual about image path when available
     og: '/og-image.jpg', // Open Graph image for social sharing

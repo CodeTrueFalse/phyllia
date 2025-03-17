@@ -1,10 +1,11 @@
 import { stackServerApp } from '@/middleware';
-import ChatInterface from '@/components/ChatInterface';
+import AccountAccess from '@/components/AccountAccess';
+import RouteIdentifier from '@/components/RouteIdentifier';
 import './page-styles.css'; // Import CSS to hide footer
 
 export const metadata = {
-  title: 'Chat with Phyllia | Phyllia',
-  description: 'Chat with Phyllia, our AI assistant designed to help you with your questions and tasks.',
+  title: 'Version Bêta Privée | Phyllia',
+  description: 'Phyllia est actuellement en version bêta privée. Rejoignez notre liste d\'attente pour y accéder.',
 };
 
 export default async function ChatPage() {
@@ -18,14 +19,18 @@ export default async function ChatPage() {
 
   return (
     <main className="container">
+      <RouteIdentifier route="/chat" />
       <div className="chat-container">
-        <div className="chat-header">
-          <h1>Chat with Phyllia</h1>
-          <p>Hello, {displayName}! I'm Phyllia, your AI assistant. Ask me anything about our services, sustainability, or how I can help you today.</p>
-        </div>
-        
-        <div className="container">
-          <ChatInterface userId={user.id} />
+        <div className="private-beta-content">
+          <div className="beta-badge">Version Bêta Privée</div>
+          <h1>Bienvenue sur Phyllia</h1>
+          <p className="welcome-message">Bonjour, {displayName} !</p>
+          <p className="beta-message">
+            Merci de votre intérêt pour Phyllia. Nous sommes actuellement en version bêta privée.
+            L'accès complet à notre interface de chat sera bientôt disponible.
+          </p>
+          <div className="divider"></div>
+          <AccountAccess />
         </div>
       </div>
     </main>
