@@ -66,7 +66,7 @@ const teamMembers: MemberData[] = [
     email: 'tanguy.libert@truefalse.fr'
   },
   {
-    id: 6,
+    id: 5,
     name: 'Godwin Kanlinsou',
     role: 'Développeur',
     bio: '',
